@@ -1,6 +1,19 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  width: 100vw;
   text-align: center;
+  margin: 0 auto;
+}
+
+.app {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.main-img {
+  text-align: center;
+}
+
+.book-main {
+  border-radius: 15px;
+  width: 35%;
 }
