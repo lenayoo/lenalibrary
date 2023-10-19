@@ -1,5 +1,6 @@
 #root {
   width: 100vw;
+  height: 100vh;
   text-align: center;
   margin: 0 auto;
 }
@@ -17,4 +18,24 @@
 .book-main {
   border-radius: 15px;
   width: 35%;
+}
+
+.main-quotes {
+  font-size: 18px;
+  width: 45%;
+  margin: 1em auto;
+  background-color: #F0F0F0;
+  padding: 0.5em 1em;
+  border-radius: 15px;
+}
+
+.main-form__div {
+  width: 50%;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.main-form {
+  display: flex;
+  flex-direction: column;
 }
