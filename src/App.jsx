@@ -1,5 +1,6 @@
 import './App.css'
 import Nav from './pages/Nav'
+import Form from './pages/Form'
 
 function App() {
 
@@ -15,15 +16,7 @@ function App() {
         깊숙한 상상 속 어딘가, 언젠가 가봤던 곳, 당신은 그것이 빚어지는 것을 인지한다. 당연해. 당신은 생각한다. <u><strong>바로 이거야.</strong></u> 글을 쓰고 있는 건 당신이 아니다. 딱히 그렇지 않다
         당신이 어둠 속에서 빚은 이것, 몇 번이고 실패하고 있을지도 모르겠다고 느꼈던 그것이 이제 상냥한 거인처럼 당신을 이끈다.</p>
      </div>
-     <div className='main-form__div'>
-        <form className='main-form'>
-        <label>Add your book</label>
-        <input />
-        <label>Add quotes</label>
-        <textarea />
-        <button>submit</button>
-        </form>
-     </div>
+     <Form />
     </div>
   )
 }
