@@ -28,14 +28,3 @@
   padding: 0.5em 1em;
   border-radius: 15px;
 }
-
-.main-form__div {
-  width: 50%;
-  margin: 0 auto;
-  cursor: pointer;
-}
-
-.main-form {
-  display: flex;
-  flex-direction: column;
-}
