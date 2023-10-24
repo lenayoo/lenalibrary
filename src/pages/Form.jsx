@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import "./styles.css";
 import { useState } from "react";
 
@@ -8,11 +7,26 @@ function Form() {
     quotesInput: "",
   });
 
+  const [savedBooks, setSavedBooks] = useState([]);
+
   const inputHandler = (e) => {
     const { name, value } = e.target;
     setBookQuotes({ ...bookquotes, [name]: value });
   };
-  console.log(bookquotes.bookInput, bookquotes.quotesInput);
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+
+    if (bookquotes.bookInput && bookquotes.quotesInput) {
+      setSavedBooks([...savedBooks, bookquotes]);
+    }
+    setBookQuotes({
+      bookInput: "",
+      quotesInput: "",
+    });
+  };
+
+  console.log(savedBooks);
 
   return (
     <div className="main-form__div">
@@ -29,7 +43,7 @@ function Form() {
           value={bookquotes.quotesInput}
           onChange={inputHandler}
         />
-        <button>submit</button>
+        <button onClick={submitHandler}>submit</button>
       </form>
     </div>
   );

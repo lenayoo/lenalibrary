@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 import "./App.css";
 import Nav from "./pages/Nav";
 import Form from "./pages/Form";
