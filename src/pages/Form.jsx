@@ -3,7 +3,7 @@ import { useState } from "react";
 
 function Form() {
   const [bookquotes, setBookQuotes] = useState({
-    bookInput: "",
+    bookTitle: "",
     quotesInput: "",
   });
 
@@ -17,11 +17,11 @@ function Form() {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    if (bookquotes.bookInput && bookquotes.quotesInput) {
+    if (bookquotes.bookTitle && bookquotes.quotesInput) {
       setSavedBooks([...savedBooks, bookquotes]);
     }
     setBookQuotes({
-      bookInput: "",
+      bookTitle: "",
       quotesInput: "",
     });
   };
@@ -33,8 +33,8 @@ function Form() {
       <form className="main-form">
         <label>Add your book</label>
         <input
-          name="bookInput"
-          value={bookquotes.bookInput}
+          name="bookTitle"
+          value={bookquotes.bookTitle}
           onChange={inputHandler}
         />
         <label>Add quotes</label>
@@ -45,6 +45,13 @@ function Form() {
         />
         <button onClick={submitHandler}>submit</button>
       </form>
+      {savedBooks &&
+        savedBooks.map((book, index) => (
+          <div key={index} className="book-list">
+            <h3>{book.bookTitle}</h3>
+            <p>{book.quotesInput}</p>
+          </div>
+        ))}
     </div>
   );
 }
