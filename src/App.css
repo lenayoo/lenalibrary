@@ -20,9 +20,14 @@
   width: 35%;
 }
 
+.main-btn {
+  background-color: #F0F0F0;
+  color: black;
+}
+
 .main-quotes {
   font-size: 18px;
-  width: 45%;
+  width: 35%;
   margin: 1em auto;
   background-color: #F0F0F0;
   color: black;

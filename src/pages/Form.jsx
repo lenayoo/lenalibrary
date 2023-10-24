@@ -43,7 +43,9 @@ function Form() {
           value={bookquotes.quotesInput}
           onChange={inputHandler}
         />
-        <button onClick={submitHandler}>submit</button>
+        <button onClick={submitHandler} className="main-btn">
+          submit
+        </button>
       </form>
       {savedBooks &&
         savedBooks.map((book, index) => (

@@ -1,35 +1,35 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    font-size: 24px;
-    cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+  cursor: pointer;
 }
 
 li {
-    list-style: none;
-    margin-right: 3rem;
+  list-style: none;
+  margin-right: 3rem;
 }
 
 .navebar__menu {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .main-form__div {
-    width: 50%;
-    margin: 0 auto;
-    cursor: pointer;
-    margin-top: 20px;
-  }
+  width: 35%;
+  cursor: pointer;
+  margin-top: 20px;
+  margin: 0 auto;
+}
   
-  .main-form {
-    display: flex;
-    flex-direction: column;
-  }
+.main-form {
+  display: flex;
+  flex-direction: column;
+}
 
 .book-list {
-    width: 100%;
-    height: fit-content;
-    background-color: beige;
-    color: black;
+  width: 100%;
+  height: fit-content;
+  background-color: beige;
+  color: black;
 }
