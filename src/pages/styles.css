@@ -5,9 +5,11 @@
   cursor: pointer;
 }
 
+
 li {
   list-style: none;
   margin-right: 3rem;
+  cursor: pointer;
 }
 
 .navebar__menu {
