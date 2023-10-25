@@ -1,7 +1,12 @@
-import React from "react";
+import Nav from "./Nav";
 
 function FindBook() {
-  return <div>FindBook</div>;
+  return (
+    <div>
+      <Nav />
+      FindBook
+    </div>
+  );
 }
 
 export default FindBook;

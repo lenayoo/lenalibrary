@@ -1,7 +1,12 @@
-import React from "react";
+import Nav from "./Nav";
 
 function Books() {
-  return <div>Books</div>;
+  return (
+    <div>
+      <Nav />
+      Books
+    </div>
+  );
 }
 
 export default Books;
