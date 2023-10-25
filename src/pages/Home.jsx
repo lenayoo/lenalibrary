@@ -1,6 +1,5 @@
 import "./styles.css";
 import Nav from "./Nav";
-import Form from "./Form";
 
 function Home() {
   return (
@@ -24,7 +23,6 @@ function Home() {
           상냥한 거인처럼 당신을 이끈다.
         </p>
       </div>
-      <Form />
     </div>
   );
 }
