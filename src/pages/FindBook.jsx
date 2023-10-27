@@ -1,10 +1,15 @@
 import Nav from "./Nav";
+import "./styles.css";
 
 function FindBook() {
   return (
     <div>
       <Nav />
-      FindBook
+      <form className="findbook__form">
+        <label htmlFor="search">Search for the book you are looking for</label>
+        <input />
+        <button>Search</button>
+      </form>
     </div>
   );
 }
