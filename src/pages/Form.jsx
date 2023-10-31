@@ -51,6 +51,7 @@ function Form() {
         savedBooks.map((book, index) => (
           <div key={index} className="book-list">
             <h3>{book.bookTitle}</h3>
+            <div className="line"></div>
             <p>{book.quotesInput}</p>
           </div>
         ))}

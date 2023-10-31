@@ -69,6 +69,14 @@ li {
   height: fit-content;
   background-color: beige;
   color: black;
+  border-radius: 15px;
+}
+
+.line {
+  width: 95%;
+  height: 1px;
+  background-color: gray;
+  margin: 0 auto;
 }
 
 /* find book */
