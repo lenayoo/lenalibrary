@@ -1,8 +1,13 @@
 import Nav from "./Nav";
 import "./styles.css";
+import { useState } from "react";
 
 function Archive() {
-  const openBookHandler = () => {};
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openBookHandler = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <>
@@ -15,7 +20,11 @@ function Archive() {
             Dani Shapiro
           </p>
         </div>
-        <div className="book-content"></div>
+        {isOpen && (
+          <div className="book-content" onClick={openBookHandler}>
+            This is where story starts
+          </div>
+        )}
       </div>
     </>
   );

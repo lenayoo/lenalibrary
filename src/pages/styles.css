@@ -100,3 +100,13 @@ li {
 .book-img {
   width: 200px;
 }
+
+.book-content {
+  width: 30%;
+  height: 200px;
+  background-color: lightgray;
+  padding: 15px 20px;
+  color: black;
+  border-radius: 15px;
+  margin: 0 auto;
+}
