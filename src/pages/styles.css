@@ -87,3 +87,16 @@ li {
   justify-content: center;
   height: 80vh;
 }
+
+/* Archive */
+.archive {
+
+}
+
+.book-frame {
+  cursor: pointer;
+}
+
+.book-img {
+  width: 200px;
+}
