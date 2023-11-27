@@ -14,6 +14,9 @@ function Nav() {
         <li>
           <Link to="/booksandquotes">Books and Quotes</Link>
         </li>
+        <li>
+          <Link to="/favoriteBooks">Archive</Link>
+        </li>
       </ul>
     </nav>
   );
