@@ -10,6 +10,10 @@ function Home() {
         <img src="book-main.jpeg" className="book-main" />
       </div>
       <div className="main-quotes">
+        <h1>
+          나날들은 지나가고, 세월들은 사라지고, 우리는 기적들 사이를 맹목적으로
+          걸어다닌다.
+        </h1>
         <p>
           당신은 확고하게 발을 디디며 앞으로 나아간다. 어디로 향하고 있는지 잘
           모를 것이다. 안다고 할 수 없을 것이다. 하지만 이제 당신이 깃든 풍경은
