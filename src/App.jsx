@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Books from "./pages/Books";
 import FindBook from "./pages/FindBook";
 import Archive from "./pages/Archive";
+import Content from "./pages/Content";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/booksandquotes" element={<Books />} />
         <Route path="/favoriteBooks" element={<Archive />} />
         <Route path="/findmybook" element={<FindBook />} />
+        {/* <Route path={`/favoriteBooks/:${id}`} element={<Content />} /> */}
       </Routes>
     </BrowserRouter>
   );

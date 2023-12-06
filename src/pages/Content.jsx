@@ -1,9 +1,7 @@
-import Nav from "./Nav";
 import "./styles.css";
 import { useState } from "react";
-import Content from "./Content";
 
-function Archive() {
+function Content({ imgSrc, title, authorName, bookContent }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const openBookHandler = () => {
@@ -12,24 +10,22 @@ function Archive() {
 
   return (
     <>
-      <Nav />
       <div className="archive">
         <div className="book-frame" onClick={openBookHandler}>
-          <img src="stillwriting.png" className="book-img" />
+          <img src={imgSrc} className="book-img" />
           <p>
-            <strong>Still Writing</strong> <br />
-            Dani Shapiro
+            <strong>{title}</strong> <br />
+            {authorName}
           </p>
         </div>
         {isOpen && (
           <div className="book-content" onClick={openBookHandler}>
-            This is where story starts
+            {bookContent}
           </div>
         )}
       </div>
-      <Content imgSrc="" title="" authorName="" bookContent="" />
     </>
   );
 }
 
-export default Archive;
+export default Content;
