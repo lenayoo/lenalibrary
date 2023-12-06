@@ -27,7 +27,12 @@ function Archive() {
           </div>
         )}
       </div>
-      <Content imgSrc="" title="" authorName="" bookContent="" />
+      <Content
+        imgSrc="murakami.png"
+        title="街とその不確かな壁"
+        authorName="村上春樹"
+        bookContent="図書館と陰の話"
+      />
     </>
   );
 }
