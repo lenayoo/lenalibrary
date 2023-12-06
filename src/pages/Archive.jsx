@@ -33,6 +33,18 @@ function Archive() {
         authorName="村上春樹"
         bookContent="図書館と陰の話"
       />
+      <Content
+        imgSrc="dune.png"
+        title="Dune"
+        authorName="Frank Herbert"
+        bookContent="Fear and desert, fear not"
+      />
+      <Content
+        imgSrc="manseeksgod.png"
+        title="누구에게나 신이 필요한 순간이 있다"
+        authorName="Eric Weiner"
+        bookContent="Have you met your God yet?"
+      />
     </>
   );
 }
