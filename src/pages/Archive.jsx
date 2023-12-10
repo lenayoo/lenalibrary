@@ -32,7 +32,7 @@ function Archive() {
         imgSrc="murakami.png"
         title="街とその不確かな壁"
         authorName="村上春樹"
-        bookContent="図書館と陰の話"
+        bookContent="その街に行かなくてはならない。なにがあろうとー。高い壁と望楼、図書館の暗闇、古い夢、そして、きみの面影。村上春樹が、長く封印してきた“物語”の扉が、いま開かれる。"
       />
       <Content
         imgSrc="hesse.png"
@@ -45,12 +45,6 @@ function Archive() {
         title="Dune"
         authorName="Frank Herbert"
         bookContent="I must not fear. Fear is the mind-killer. Fear is the little-death that brings total obliteration. I will permit it to pass over me and through me. And when it has gone past i will turn the inner eye to see its path. Where the fear has gone there will be nothing. Only I will remain"
-      />
-      <Content
-        imgSrc="manseeksgod.png"
-        title="누구에게나 신이 필요한 순간이 있다"
-        authorName="Eric Weiner"
-        bookContent="Have you met your God yet?"
       />
       <Content
         imgSrc="manseeksgod.png"
