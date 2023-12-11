@@ -17,6 +17,7 @@ function FindBook() {
           "https://www.googleapis.com/books/v1/volumes?q=murakami"
         );
         const data = await response.json();
+        console.log(data);
         handleResponse(data);
       } catch (error) {
         console.error("Error fetching data:", error);
