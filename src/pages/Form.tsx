@@ -1,20 +1,29 @@
+import React, { ChangeEvent, FormEvent, SyntheticEvent } from "react";
 import "./styles.css";
 import { useState } from "react";
 
 function Form() {
-  const [bookquotes, setBookQuotes] = useState({
+  const [bookquotes, setBookQuotes] = useState<{
+    bookTitle: string;
+    quotesInput: string;
+  }>({
     bookTitle: "",
-    quotesInput: "",
+    quotesInput: ""
   });
 
-  const [savedBooks, setSavedBooks] = useState([]);
+  const [savedBooks, setSavedBooks] = useState<
+    {
+      bookTitle: string;
+      quotesInput: string;
+    }[]
+  >([]);
 
-  const inputHandler = (e) => {
+  const inputHandler = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setBookQuotes({ ...bookquotes, [name]: value });
   };
 
-  const submitHandler = (e) => {
+  const submitHandler = (e: FormEvent) => {
     e.preventDefault();
 
     if (bookquotes.bookTitle && bookquotes.quotesInput) {
@@ -22,7 +31,7 @@ function Form() {
     }
     setBookQuotes({
       bookTitle: "",
-      quotesInput: "",
+      quotesInput: ""
     });
   };
 

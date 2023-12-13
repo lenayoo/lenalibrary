@@ -2,6 +2,7 @@ import Nav from "./Nav";
 import "./styles.css";
 import { useState } from "react";
 import Content from "./Content";
+import React from "react";
 
 function Archive() {
   const [isOpen, setIsOpen] = useState(false);
