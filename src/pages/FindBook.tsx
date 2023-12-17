@@ -3,22 +3,22 @@ import Nav from "./Nav";
 import { useEffect, useState } from "react";
 
 function FindBook() {
-  const [bookTitles, setBookTitles] = useState([]);
+  const [bookTitles, setBookTitles] = useState<string[]>([]);
 
   useEffect(() => {
-    const handleResponse = (response: {}[]) => {
-      console.log("response", response);
-      const titles = response.items.map(
-        (item: string) => item.volumeInfo.title
-      );
-      setBookTitles((prevTitles) => [...prevTitles, ...titles]);
+    const handleResponse = (response: {
+      items: { volumeInfo: { title: string } }[];
+    }) => {
+      console.log("response", response.items);
+      const titles = response.items.map((item) => item.volumeInfo.title);
+      setBookTitles((prevTitles: string[]) => [...prevTitles, ...titles]);
     };
 
     // Fetch data from the Books API
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://www.googleapis.com/books/v1/volumes?q=harry+potter"
+          `https://www.googleapis.com/books/v1/volumes?q=murakmami`
         );
         const data = await response.json();
         console.log(data);
