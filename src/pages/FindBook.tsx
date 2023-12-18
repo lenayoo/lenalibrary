@@ -1,9 +1,14 @@
-import React from "react";
+import React, { ChangeEvent, SyntheticEvent } from "react";
 import Nav from "./Nav";
 import { useEffect, useState } from "react";
 
 function FindBook() {
   const [bookTitles, setBookTitles] = useState<string[]>([]);
+  const [searchTerm, setSearchTerm] = useState<string>("");
+
+  const changeHandler = (e: ChangeEvent<HTMLInputElement>): void => {
+    setSearchTerm(e.target.value);
+  };
 
   useEffect(() => {
     const handleResponse = (response: {
@@ -18,7 +23,7 @@ function FindBook() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://www.googleapis.com/books/v1/volumes?q=murakmami`
+          `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}`
         );
         const data = await response.json();
         console.log(data);
@@ -36,12 +41,14 @@ function FindBook() {
       <Nav />
       <form className="findbook__form">
         <label htmlFor="search">Search for the book you are looking for</label>
-        {/* <input
+        <input
           placeholder="Enter ISBN or book title"
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        /> */}
-        {/* <button onClick={handleSearch}>Search</button> */}
+          onChange={changeHandler}
+        />
+        <button type="submit" onClick={handleSearch}>
+          Search
+        </button>
         <h2>Search books</h2>
         {bookTitles.map((title, index) => (
           <div key={index}>{title}</div>
