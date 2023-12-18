@@ -10,8 +10,6 @@ function FindBook() {
     setSearchTerm(e.target.value);
   };
 
-  console.log("searchterm", searchTerm);
-
   const handleClick = async () => {
     const handleResponse = (response: {
       items: { volumeInfo: { title: string } }[];
