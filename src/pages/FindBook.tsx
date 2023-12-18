@@ -10,7 +10,9 @@ function FindBook() {
     setSearchTerm(e.target.value);
   };
 
-  useEffect(() => {
+  console.log("searchterm", searchTerm);
+
+  const handleClick = async () => {
     const handleResponse = (response: {
       items: { volumeInfo: { title: string } }[];
     }) => {
@@ -19,22 +21,17 @@ function FindBook() {
       setBookTitles((prevTitles: string[]) => [...prevTitles, ...titles]);
     };
 
-    // Fetch data from the Books API
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}`
-        );
-        const data = await response.json();
-        console.log(data);
-        handleResponse(data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
+    try {
+      const response = await fetch(
+        `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}`
+      );
+      const data = await response.json();
+      console.log(data);
+      handleResponse(data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
 
   return (
     <div>
@@ -46,7 +43,7 @@ function FindBook() {
           value={searchTerm}
           onChange={changeHandler}
         />
-        <button type="submit" onClick={handleSearch}>
+        <button type="button" onClick={handleClick}>
           Search
         </button>
         <h2>Search books</h2>
