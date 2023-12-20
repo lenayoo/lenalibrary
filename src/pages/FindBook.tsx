@@ -2,8 +2,16 @@ import React, { ChangeEvent, SyntheticEvent } from "react";
 import Nav from "./Nav";
 import { useEffect, useState } from "react";
 
+interface ApiBookInfo {
+  author: string;
+  image: string;
+  previewLink: string;
+  title: string;
+}
+[];
+
 function FindBook() {
-  const [bookTitles, setBookTitles] = useState<{}[]>([]);
+  const [bookInfos, setBookInfos] = useState<string[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
 
   const changeHandler = (e: ChangeEvent<HTMLInputElement>): void => {
@@ -12,12 +20,26 @@ function FindBook() {
 
   const handleClick = async () => {
     const handleResponse = (response: {
-      items: {} }[];
+      items: {
+        author: string;
+        image: string;
+        previewLink: string;
+        title: string;
+      }[];
     }) => {
-      console.log("response", response.items);
-      const bookInfo = response.map((item) => item.volumeInfo.title);
-      setBookTitles((prevTitles:) => [...prevTitles, ...titles]);
+      const items = response.items.map((bookInfo) => {
+        bookInfo.author;
+      });
+      setBookInfos((prevItems) => [...prevItems, items]);
     };
+
+    // const handleResponse = (response: {
+    //   items: { volumeInfo: { title: string } }[];
+    // }) => {
+    //   console.log("response", response.items);
+    //   const titles = response.items.map((item) => item.volumeInfo.title);
+    //   setBookTitles((prevTitles: string[]) => [...prevTitles, ...titles]);
+    // };
 
     try {
       const response = await fetch(
@@ -45,9 +67,7 @@ function FindBook() {
           Search
         </button>
         <h2>Search books</h2>
-        {bookTitles.map((title, index) => (
-          <div key={index}>{title}</div>
-        ))}
+        {bookInfos}
       </form>
     </div>
   );
