@@ -2,16 +2,8 @@ import React, { ChangeEvent, SyntheticEvent } from "react";
 import Nav from "./Nav";
 import { useEffect, useState } from "react";
 
-interface ApiBookInfo {
-  author: string;
-  image: string;
-  previewLink: string;
-  title: string;
-}
-[];
-
 function FindBook() {
-  const [bookInfos, setBookInfos] = useState<string[]>([]);
+  const [bookInfos, setBookInfos] = useState<{}>({});
   const [searchTerm, setSearchTerm] = useState<string>("");
 
   const changeHandler = (e: ChangeEvent<HTMLInputElement>): void => {
@@ -21,16 +13,17 @@ function FindBook() {
   const handleClick = async () => {
     const handleResponse = (response: {
       items: {
-        author: string;
-        image: string;
-        previewLink: string;
-        title: string;
-      }[];
+        volumeInfo: {
+          authors: { author: string };
+          imageLinks: { smallThumbnail: string };
+          previewLink: string;
+          title: string;
+        };
+      };
     }) => {
-      const items = response.items.map((bookInfo) => {
-        bookInfo.author;
-      });
-      setBookInfos((prevItems) => [...prevItems, items]);
+      const books = response.items;
+
+      // setBookInfos((prevItems) => [...prevItems, items]);
     };
 
     // const handleResponse = (response: {
@@ -53,6 +46,8 @@ function FindBook() {
     }
   };
 
+  console.log(bookInfos);
+
   return (
     <div>
       <Nav />
@@ -67,7 +62,6 @@ function FindBook() {
           Search
         </button>
         <h2>Search books</h2>
-        {bookInfos}
       </form>
     </div>
   );
