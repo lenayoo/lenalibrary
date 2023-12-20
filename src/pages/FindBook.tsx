@@ -3,7 +3,7 @@ import Nav from "./Nav";
 import { useEffect, useState } from "react";
 
 function FindBook() {
-  const [bookTitles, setBookTitles] = useState<string[]>([]);
+  const [bookTitles, setBookTitles] = useState<{}[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
 
   const changeHandler = (e: ChangeEvent<HTMLInputElement>): void => {
@@ -12,11 +12,11 @@ function FindBook() {
 
   const handleClick = async () => {
     const handleResponse = (response: {
-      items: { volumeInfo: { title: string } }[];
+      items: {} }[];
     }) => {
       console.log("response", response.items);
-      const titles = response.items.map((item) => item.volumeInfo.title);
-      setBookTitles((prevTitles: string[]) => [...prevTitles, ...titles]);
+      const bookInfo = response.map((item) => item.volumeInfo.title);
+      setBookTitles((prevTitles:) => [...prevTitles, ...titles]);
     };
 
     try {

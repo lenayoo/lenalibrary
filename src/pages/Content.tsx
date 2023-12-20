@@ -2,7 +2,14 @@ import React from "react";
 import "./styles.css";
 import { useState } from "react";
 
-function Content({ imgSrc, title, authorName, bookContent }) {
+interface BookContent {
+  imgSrc: string;
+  title: string;
+  authorName: string;
+  bookContent: string;
+}
+
+function Content({ imgSrc, title, authorName, bookContent }: BookContent) {
   const [isOpen, setIsOpen] = useState(false);
 
   const openBookHandler = () => {
