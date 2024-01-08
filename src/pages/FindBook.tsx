@@ -59,7 +59,7 @@ function FindBook() {
           onChange={changeHandler}
         />
         <button type="button" onClick={handleClick}>
-          Search
+          検索
         </button>
         <h2>Search books</h2>
       </form>
