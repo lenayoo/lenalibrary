@@ -1,6 +1,7 @@
 import React, { ChangeEvent, FormEvent, SyntheticEvent } from "react";
 import "./styles.css";
 import { useState } from "react";
+import * as firebase from "../firebase";
 
 function Form() {
   const [bookquotes, setBookQuotes] = useState<{
@@ -28,6 +29,8 @@ function Form() {
 
     if (bookquotes.bookTitle && bookquotes.quotesInput) {
       setSavedBooks([...savedBooks, bookquotes]);
+      // copilot suggested this:
+      firebase.database().ref("books").push(bookquotes);
     }
     setBookQuotes({
       bookTitle: "",
