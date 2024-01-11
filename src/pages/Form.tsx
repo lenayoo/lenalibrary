@@ -1,7 +1,8 @@
 import React, { ChangeEvent, FormEvent, SyntheticEvent } from "react";
 import "./styles.css";
 import { useState } from "react";
-import * as firebase from "../firebase";
+import { db } from "../firebase";
+import { collection } from "firebase/firestore";
 
 function Form() {
   const [bookquotes, setBookQuotes] = useState<{
