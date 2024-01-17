@@ -7,9 +7,11 @@ import { collection } from "firebase/firestore";
 function Form() {
   const [bookquotes, setBookQuotes] = useState<{
     bookTitle: string;
+    author: string;
     quotesInput: string;
   }>({
     bookTitle: "",
+    author: "",
     quotesInput: ""
   });
 
@@ -35,6 +37,7 @@ function Form() {
     }
     setBookQuotes({
       bookTitle: "",
+      author: "",
       quotesInput: ""
     });
   };
@@ -48,6 +51,12 @@ function Form() {
         <input
           name="bookTitle"
           value={bookquotes.bookTitle}
+          onChange={inputHandler}
+        />
+        <label>Add your author</label>
+        <input
+          name="author"
+          value={bookquotes.author}
           onChange={inputHandler}
         />
         <label>Add quotes</label>
