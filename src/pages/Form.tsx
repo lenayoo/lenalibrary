@@ -18,6 +18,7 @@ function Form() {
   const [savedBooks, setSavedBooks] = useState<
     {
       bookTitle: string;
+      author: string;
       quotesInput: string;
     }[]
   >([]);
@@ -32,14 +33,8 @@ function Form() {
 
     if (bookquotes.bookTitle && bookquotes.quotesInput) {
       setSavedBooks([...savedBooks, bookquotes]);
-      // copilot suggested this:
-      firebase.database().ref("books").push(bookquotes);
     }
-    setBookQuotes({
-      bookTitle: "",
-      author: "",
-      quotesInput: ""
-    });
+    setBookQuotes({ bookTitle: "", author: "", quotesInput: "" });
   };
 
   console.log(savedBooks);
@@ -60,7 +55,7 @@ function Form() {
           onChange={inputHandler}
         />
         <label>Add quotes</label>
-        <textarea
+        <input
           name="quotesInput"
           value={bookquotes.quotesInput}
           onChange={inputHandler}
