@@ -1,8 +1,8 @@
-import React, { ChangeEvent, FormEvent, SyntheticEvent } from "react";
+import React, { ChangeEvent, FormEvent } from "react";
 import "./styles.css";
 import { useState } from "react";
 import { db } from "../firebase";
-import { collection } from "firebase/firestore";
+import { addDoc, collection } from "firebase/firestore";
 
 function Form() {
   const [bookquotes, setBookQuotes] = useState<{
@@ -28,8 +28,15 @@ function Form() {
     setBookQuotes({ ...bookquotes, [name]: value });
   };
 
-  const submitHandler = (e: FormEvent) => {
+  const submitHandler = async (e: FormEvent) => {
     e.preventDefault();
+
+    try {
+      const docRef = await addDoc(collection(db, "books"), bookquotes);
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("error", e);
+    }
 
     if (bookquotes.bookTitle && bookquotes.quotesInput) {
       setSavedBooks([...savedBooks, bookquotes]);

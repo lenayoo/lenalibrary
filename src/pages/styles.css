@@ -65,12 +65,12 @@ li {
 }
 
 .book-list {
-  width: 90%;
+  width: 80%;
   height: fit-content;
   background-color: beige;
   color: black;
   border-radius: 15px;
-  padding: 15px 30px;
+  padding: 10px 30px;
   margin: 3em auto;
 }
 
