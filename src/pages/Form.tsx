@@ -33,12 +33,12 @@ function Form() {
 
     try {
       const docRef = await addDoc(collection(db, "books"), bookquotes);
-      console.log("Document written with ID: ", docRef.id);
-    } catch (e) {
-      console.error("error", e);
+      console.log("firebase id ", docRef.id);
+    } catch (error) {
+      console.error("error", error);
     }
 
-    if (bookquotes.bookTitle && bookquotes.quotesInput) {
+    if (bookquotes.bookTitle && bookquotes.author && bookquotes.quotesInput) {
       setSavedBooks([...savedBooks, bookquotes]);
     }
     setBookQuotes({ bookTitle: "", author: "", quotesInput: "" });
