@@ -67,7 +67,10 @@ function Form() {
       {savedBooks &&
         savedBooks.map((book, index) => (
           <div key={index} className="book-list">
-            <h3>{book.bookTitle}</h3>
+            <div className="book-list__top">
+              <h3>{book.bookTitle}</h3>
+              <p>{book.author}</p>
+            </div>
             <div className="line"></div>
             <p>{book.quotesInput}</p>
           </div>

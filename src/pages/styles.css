@@ -65,11 +65,13 @@ li {
 }
 
 .book-list {
-  width: 100%;
+  width: 90%;
   height: fit-content;
   background-color: beige;
   color: black;
   border-radius: 15px;
+  padding: 15px 30px;
+  margin: 3em auto;
 }
 
 .line {
@@ -77,6 +79,11 @@ li {
   height: 1px;
   background-color: gray;
   margin: 0 auto;
+}
+
+.book-list__top {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* find book */
