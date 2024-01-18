@@ -32,7 +32,7 @@ function Form() {
     e.preventDefault();
 
     try {
-      const docRef = await addDoc(collection(db, "books"), bookquotes);
+      const docRef = await addDoc(collection(db, "archive"), bookquotes);
       console.log("firebase id ", docRef.id);
     } catch (error) {
       console.error("error", error);
