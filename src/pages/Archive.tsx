@@ -68,7 +68,7 @@ function Archive() {
         authorName="Eric Weiner"
         bookContent="Have you met your God yet?"
       />
-      {savedBooks && savedBooks.map((book) => <Content {...book})}
+      {savedBooks && savedBooks.map((book) => <Content {...book} />)}
     </>
   );
 }
