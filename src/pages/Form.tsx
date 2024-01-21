@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent } from "react";
+import React, { ChangeEvent, FormEvent, useCallback, useMemo } from "react";
 import "./styles.css";
 import { useState } from "react";
 import { db } from "../firebase";
@@ -23,10 +23,13 @@ function Form() {
     }[]
   >([]);
 
-  const inputHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setBookQuotes({ ...bookquotes, [name]: value });
-  };
+  const inputHandler = useCallback(
+    (e: ChangeEvent<HTMLInputElement>) => {
+      const { name, value } = e.target;
+      setBookQuotes({ ...bookquotes, [name]: value });
+    },
+    [bookquotes]
+  );
 
   const submitHandler = async (e: FormEvent) => {
     e.preventDefault();
