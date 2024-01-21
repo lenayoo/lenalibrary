@@ -1,11 +1,26 @@
 import Nav from "./Nav";
 import "./styles.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Content from "./Content";
 import React from "react";
+import { QuerySnapshot, collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase";
 
 function Archive() {
   const [isOpen, setIsOpen] = useState(false);
+  const [savedBooks, setSavedBooks] = useState([]);
+
+  useEffect(() => {
+    const fetchBooks = async () => {
+      const getBooks = await getDocs(collection(db, "archive"));
+      console.log(getBooks);
+
+      const calledBooks = getBooks.docs.map((doc) => doc.data());
+      console.log(calledBooks);
+    };
+
+    fetchBooks();
+  }, []);
 
   const openBookHandler = () => {
     setIsOpen(!isOpen);
