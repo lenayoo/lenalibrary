@@ -3,7 +3,7 @@ import "./styles.css";
 import { useState } from "react";
 
 interface BookContent {
-  imgSrc: string;
+  imgSrc?: string;
   title: string;
   authorName: string;
   bookContent: string;

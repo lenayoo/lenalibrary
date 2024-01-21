@@ -7,8 +7,8 @@ import { QuerySnapshot, collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
 
 function Archive() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [savedBooks, setSavedBooks] = useState([]);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [savedBooks, setSavedBooks] = useState<{}[]>([]);
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -68,6 +68,7 @@ function Archive() {
         authorName="Eric Weiner"
         bookContent="Have you met your God yet?"
       />
+      {savedBooks && savedBooks.map((book) => <Content {...book})}
     </>
   );
 }
