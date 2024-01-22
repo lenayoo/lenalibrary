@@ -6,20 +6,20 @@ import { addDoc, collection } from "firebase/firestore";
 
 function Form() {
   const [bookquotes, setBookQuotes] = useState<{
-    bookTitle: string;
-    author: string;
-    quotesInput: string;
+    title: string;
+    authorName: string;
+    bookContent: string;
   }>({
-    bookTitle: "",
-    author: "",
-    quotesInput: ""
+    title: "",
+    authorName: "",
+    bookContent: ""
   });
 
   const [savedBooks, setSavedBooks] = useState<
     {
-      bookTitle: string;
-      author: string;
-      quotesInput: string;
+      title: string;
+      authorName: string;
+      bookContent: string;
     }[]
   >([]);
 
@@ -41,48 +41,42 @@ function Form() {
       console.error("error", error);
     }
 
-    if (bookquotes.bookTitle && bookquotes.author && bookquotes.quotesInput) {
+    if (bookquotes.title && bookquotes.authorName && bookquotes.bookContent) {
       setSavedBooks([...savedBooks, bookquotes]);
     }
-    setBookQuotes({ bookTitle: "", author: "", quotesInput: "" });
+    setBookQuotes({ title: "", authorName: "", bookContent: "" });
   };
-
-  console.log(savedBooks);
 
   return (
     <div className="main-form__div">
       <form className="main-form">
         <label>Add your book</label>
-        <input
-          name="bookTitle"
-          value={bookquotes.bookTitle}
-          onChange={inputHandler}
-        />
+        <input name="title" value={bookquotes.title} onChange={inputHandler} />
         <label>Add your author</label>
         <input
-          name="author"
-          value={bookquotes.author}
+          name="authorName"
+          value={bookquotes.authorName}
           onChange={inputHandler}
         />
         <label>Add quotes</label>
         <input
-          name="quotesInput"
-          value={bookquotes.quotesInput}
+          name="bookContent"
+          value={bookquotes.bookContent}
           onChange={inputHandler}
         />
         <button onClick={submitHandler} className="main-btn">
-          submit
+          ADD
         </button>
       </form>
       {savedBooks &&
         savedBooks.map((book, index) => (
           <div key={index} className="book-list">
             <div className="book-list__top">
-              <h3>{book.bookTitle}</h3>
-              <p>{book.author}</p>
+              <h3>{book.title}</h3>
+              <p>{book.authorName}</p>
             </div>
             <div className="line"></div>
-            <p>{book.quotesInput}</p>
+            <p>{book.bookContent}</p>
           </div>
         ))}
     </div>

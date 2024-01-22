@@ -8,7 +8,13 @@ import { db } from "../firebase";
 
 function Archive() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [savedBooks, setSavedBooks] = useState<{}[]>([]);
+  const [savedBooks, setSavedBooks] = useState<
+    {
+      title: string;
+      authorName: string;
+      bookContent: string;
+    }[]
+  >([]);
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -17,6 +23,13 @@ function Archive() {
 
       const calledBooks = getBooks.docs.map((doc) => doc.data());
       console.log(calledBooks);
+      setSavedBooks(
+        calledBooks.map((book) => ({
+          title: book.title,
+          authorName: book.authorName,
+          bookContent: book.bookContent
+        }))
+      );
     };
 
     fetchBooks();
