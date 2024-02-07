@@ -50,23 +50,36 @@ function Form() {
   return (
     <div className="main-form__div">
       <form className="main-form">
-        <label>Add your book</label>
-        <input name="title" value={bookquotes.title} onChange={inputHandler} />
-        <label>Add your author</label>
-        <input
-          name="authorName"
-          value={bookquotes.authorName}
-          onChange={inputHandler}
-        />
-        <label>Add quotes</label>
-        <input
-          name="bookContent"
-          value={bookquotes.bookContent}
-          onChange={inputHandler}
-        />
-        <button onClick={submitHandler} className="main-btn">
-          ADD
-        </button>
+        <div className="form-input">
+          {" "}
+          <label>Add your book</label>
+          <input
+            name="title"
+            value={bookquotes.title}
+            onChange={inputHandler}
+          />
+        </div>
+        <div className="form-input">
+          <label>Add your author</label>
+          <input
+            name="authorName"
+            value={bookquotes.authorName}
+            onChange={inputHandler}
+          />
+        </div>
+        <div className="form-input">
+          <label>Add quotes</label>
+          <input
+            name="bookContent"
+            value={bookquotes.bookContent}
+            onChange={inputHandler}
+          />
+        </div>
+        <div>
+          <button onClick={submitHandler} className="main-btn">
+            Save
+          </button>
+        </div>
       </form>
       {savedBooks &&
         savedBooks.map((book, index) => (

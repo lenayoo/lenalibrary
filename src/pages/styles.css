@@ -48,6 +48,14 @@ li {
   font-size: larger;
 }
 
+.nav-li {
+  color: #B2D732;
+  font-size: x-large;
+  font-weight: bolder;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+/* Form */
 .main-form__div {
   width: 35%;
   cursor: pointer;
@@ -58,6 +66,17 @@ li {
 .main-form {
   display: flex;
   flex-direction: column;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+.main-btn {
+  width: 35%;
+  margin-top: 1.5rem;
 }
 
 .book-list {

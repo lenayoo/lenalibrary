@@ -5,6 +5,7 @@ import FindBook from "./pages/FindBook";
 import Archive from "./pages/Archive";
 import Content from "./pages/Content";
 import React from "react";
+import "./App.css";
 
 function App() {
   return (
