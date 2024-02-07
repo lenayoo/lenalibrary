@@ -38,18 +38,14 @@
 /* navbar */
 ul {
   display: flex;
-  flex-direction: row-reverse;
+  justify-content: flex-end;
 }
 
 li {
   list-style: none;
   margin-right: 3rem;
   cursor: pointer;
-}
-
-.navebar__menu {
-  display: flex;
-  flex-direction: row;
+  font-size: larger;
 }
 
 .main-form__div {

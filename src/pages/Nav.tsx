@@ -9,14 +9,14 @@ function Nav() {
         <li>
           <Link to="/">Home</Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/findmybook">Find My Book</Link>
+        </li> */}
+        <li>
+          <Link to="/booksandquotes">Add Books</Link>
         </li>
         <li>
-          <Link to="/booksandquotes">Books and Quotes</Link>
-        </li>
-        <li>
-          <Link to="/favoriteBooks">Archive</Link>
+          <Link to="/favoriteBooks">Library📚</Link>
         </li>
       </ul>
     </nav>
